@@ -13,7 +13,7 @@ const Team = () => {
         console.log("user deleted", data);
         if (data.deletedCount > 0) {
           alert("deleted successfully");
-          const remaining = users.filter(user => user._id !== _id);
+          const remaining = users?.filter(user => user._id !== _id);
           setUsers(remaining);
         }
       });
@@ -22,10 +22,10 @@ const Team = () => {
   return (
     <div>
       <div className="">
-        <h1>User = {loadedUser.length}</h1>
+        <h1>User = {users?.length}</h1>
 
         <div className="">
-          {loadedUser.map((content, _id) => (
+          {users?.map((content, _id) => (
             <div
               className="border-red-300 w-full border py-2 my-2 text-xl"
               content="content"
